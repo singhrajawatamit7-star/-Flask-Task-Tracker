@@ -1,0 +1,21 @@
+body {
+  background: linear-gradient(180deg, #f8fbff 0%, #eef3f8 100%);
+  min-height: 100vh;
+}
+
+.navbar {
+  background: linear-gradient(135deg, #0d6efd, #0a58ca) !important;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.task-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2rem rgba(13, 110, 253, 0.08);
+}
