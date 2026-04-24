@@ -7,8 +7,13 @@ from typing import Any
 from flask import Flask, flash, redirect, render_template, request, url_for
 
 
+import os
+
 BASE_DIR = Path(__file__).resolve().parent
-DATA_FILE = BASE_DIR / "data" / "tasks.json"
+if os.environ.get("VERCEL"):
+    DATA_FILE = Path("/tmp/tasks.json")
+else:
+    DATA_FILE = BASE_DIR / "data" / "tasks.json"
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "dev-secret-key"
